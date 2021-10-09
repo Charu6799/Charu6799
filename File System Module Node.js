@@ -6,7 +6,7 @@ const rl=readline.createInterface({
 const fs=require('fs');
 var filename="";
 var content="";
-var directoryName="";
+var dirName="";
 var removeDName="";
 var renamefile="";
 var createFile=()=>{
@@ -22,7 +22,7 @@ var createFile=()=>{
     });
 };
 var createDirectory=()=>{
-    fs.mkdirSync(directoryName,function(err){
+    fs.mkdirSync(dirName,function(err){
         if(err){
             console.log(err);
         }
@@ -34,7 +34,7 @@ var createDirectory=()=>{
 };
 var createDirectoryWizard=()=>{
     rl.question("Enter Name of the Directory to Create :",(ans)=>{
-        directoryName=ans;
+        dirName=ans;
         createDirectory();
     });
 };
